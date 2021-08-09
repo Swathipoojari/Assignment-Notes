@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Assignment</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="assets/js/popper-1.12.3.min.js"></script>
+    <script src="assets/js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/style.css" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bgNav">
+      <a class="navbar-brand" href="#">My Notes</a>
+
+      <div
+        class="collapse navbar-collapse navbarAllign"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav"></ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control myNotesSearch"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+        </form>
+        <div class="dropdown show">
+          <a class="userPorf" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="" id="username"></div>
+          </a>
+        
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" onclick="logout()">logout</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid bodyTop">
+      <div class="row">
+        <div class="col-lg-3 myNotesTabs">
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a
+              class="nav-item nav-link active"
+              id="nav-home-tab"
+              data-toggle="tab"
+              href="#nav-home"
+              role="tab"
+              aria-controls="nav-home"
+              aria-selected="true"
+              >Home</a
+            >
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="tab-content" id="nav-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="nav-home"
+              role="tabpanel"
+              aria-labelledby="nav-home-tab"
+            >
+            <div class="card col-lg-9 offset-lg-1">
+              <div class="card-head">
+                <input type="text" name="title" id="title" placeholder="Title" />
+              </div>
+              <div class="card-body">
+                <input
+                  type="text"
+                  name="notes"
+                  id="notes"
+                  placeholder="Write something here..."
+                />
+              </div>
+              <div class="" id="cardOption">
+                <span class="iconHld" id="addIconHld" onclick="addNotes()"
+                  ><span class="addnote">ADD</span></span
+                >
+              </div>
+            </div>
+            <div id="notesList" class="row"></div>
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="updateNote"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="updateNoteTitle"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <input
+                      type="text"
+                      name="title"
+                      id="updatedtitle"
+                      placeholder="Title"
+                    />
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <input
+                      type="text"
+                      name="notes"
+                      id="updatednotes"
+                      placeholder="Write something here..."
+                    />
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      onclick="updateNotesToList()"
+                    >
+                      Save changes
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/index.js"></script>
+  </body>
+</html>
